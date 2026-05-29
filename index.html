@@ -79,41 +79,58 @@ svg{
 }  
 
 
-
-    
-    
 @media(max-width:900px){
 
-.wrap{
-    padding:18px;
-}
+    .wrap{
+        padding:18px;
+    }
 
-.hero{
-    grid-template-columns:1fr;
-    gap:28px;
-}
+    .hero{
+        grid-template-columns:1fr;
+        gap:28px;
+    }
 
-.title{
-    font-size:50px;
-    max-width:none;
-    letter-spacing:-3px;
-}
+    .title{
+        font-size:50px;
+        max-width:none;
+        letter-spacing:-3px;
+    }
 
-.panel{
-    height:680px;
-}
+    /* 🔴 고정 높이를 없애고, 내부 요소들을 세로 정렬(Flex)로 변경합니다 */
+    .panel{
+        height: auto; /* 고정 높이 제거 */
+        display: flex;
+        flex-direction: column;
+        padding: 20px 20px 30px 20px; /* 사방 여백 확보 */
+    }
 
-svg{
-    width:100%;
-    height:auto;
-    display:block;
-}
+    svg{
+        width:100%;
+        height:auto;
+        display:block;
+        margin-bottom: 20px; /* SVG와 아래 텍스트 사이 간격 추가 */
+    }
 
-.metric{
-    position:absolute;
-    left:20px;
-    bottom:24px;
+    /* 🔴 절대 위치(absolute)를 해제하여 SVG 아래로 자연스럽게 흐르게 합니다 */
+    .metric{
+        position: relative; /* absolute에서 변경 */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .metric .spine{
+        font-size:46px;
+        line-height: 1.2; /* 자간/행간이 겹치지 않도록 조정 */
+    }
+
+    .metric .row{
+        font-size:16px;
+        margin-top: 8px;
+    }
 }
+    
+    
 
 
     
