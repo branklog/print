@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -23,8 +22,11 @@ input,select{width:100%;height:62px;background:#090909;border:1px solid #242424;
 .metric{position:absolute;left:38px;bottom:38px}
 .metric .cap{font-size:11px;color:#666}.metric .spine{font-size:84px;font-weight:900}
 .metric .row{font-size:22px;margin-top:12px}
-svg{width:100%;height:100%}
-
+svg{
+    width:100%;
+    height:auto;
+    display:block;
+}
 @media(max-width:900px){
 
 .wrap{
@@ -43,11 +45,11 @@ svg{width:100%;height:100%}
 }
 
 .panel{
-    height:430px;
+    height:auto;
+    padding-bottom:24px;
 }
-
 svg{
-    transform:translateY(-20px) scale(1.02);
+    transform:scale(1.02);
     transform-origin:top center;
 }
 
