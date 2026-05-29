@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DesignDaum Print Tools</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<style>
+:root{--bg:#000;--blue:#2d5bff;--line:#181818;--sub:#8b8b8b;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Pretendard,sans-serif;background:#000;color:#fff;overflow-x:hidden}
+.wrap{max-width:1600px;margin:auto;padding:28px 40px}
+.hero{display:grid;grid-template-columns:650px minmax(500px,1fr);gap:50px;align-items:center;min-height:100vh}
+.brand{display:flex;gap:14px;align-items:center;margin-bottom:24px}
+.logo{width:50px;height:50px;border-radius:14px;background:var(--blue);display:flex;align-items:center;justify-content:center;font-weight:800}
+.title{font-size:92px;line-height:.88;font-weight:900;letter-spacing:-5px;max-width:580px;transition:transform .15s}
+.blue{color:var(--blue)}
+.desc{color:var(--sub);line-height:1.8;margin:18px 0 26px}
+.lbl{font-size:12px;color:#7a7a7a;margin:12px 0 8px}
+input,select{width:100%;height:62px;background:#090909;border:1px solid #242424;color:#fff;border-radius:18px;padding:0 18px}
+.panel{border:1px solid var(--line);border-radius:34px;height:780px;position:relative;background:radial-gradient(circle at center,rgba(45,91,255,.08),transparent 55%)}
+.metric{position:absolute;left:38px;bottom:38px}
+.metric .cap{font-size:11px;color:#666}.metric .spine{font-size:84px;font-weight:900}
+.metric .row{font-size:22px;margin-top:12px}
+svg{width:100%;height:100%}
+@media(max-width:900px){
+.wrap{padding:18px}
+.hero{grid-template-columns:1fr;gap:28px}
+.title{font-size:50px;max-width:none;letter-spacing:-3px}
+.panel{height:500px}
+.metric .spine{font-size:42px}
+.metric .row{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="hero"><div>
+<div class="brand"><div class="logo">D</div><div><div style="font-size:11px;color:#777;letter-spacing:2px">DESIGNDAUM</div><div style="font-size:20px;font-weight:800">PRINT TOOLS.</div></div></div>
+<h1 class="title" id="title">BOOK<br>SPINE<br><span class="blue">CALCULATOR.</span></h1>
+<p class="desc">책등을 가장 크게 보여주는 실무용 계산기. 페이지 수, 종이 재질, 판형, 재단여백 기준으로 표지 작업 사이즈를 계산합니다.</p>
+
+<div class="lbl">페이지 수</div>
+<input id="pages" placeholder="페이지를 입력하세요">
+
+<div class="lbl">종이 재질</div>
+<select id="paper">
+<optgroup label="백모조">
+<option value="0.043">백모조 70g (0.043)</option><option value="0.048">백모조 80g (0.048)</option><option value="0.058" selected>백모조 100g (0.058)</option><option value="0.069">백모조 120g (0.069)</option><option value="0.084">백모조 150g (0.084)</option><option value="0.100">백모조 180g (0.100)</option>
+</optgroup>
+<optgroup label="미색모조">
+<option value="0.043">미색모조 70g (0.043)</option><option value="0.048">미색모조 80g (0.048)</option><option value="0.058">미색모조 100g (0.058)</option>
+</optgroup>
+<optgroup label="스노우지">
+<option value="0.045">스노우지 100g (0.045)</option><option value="0.058">스노우지 120g (0.058)</option><option value="0.070">스노우지 150g (0.070)</option><option value="0.090">스노우지 180g (0.090)</option><option value="0.103">스노우지 200g (0.103)</option>
+</optgroup>
+<optgroup label="아트지">
+<option value="0.040">아트지 100g (0.040)</option><option value="0.048">아트지 120g (0.048)</option><option value="0.060">아트지 150g (0.060)</option><option value="0.078">아트지 180g (0.078)</option><option value="0.094">아트지 200g (0.094)</option>
+</optgroup>
+<optgroup label="뉴플러스"><option value="0.051">뉴플러스 백색 100g (0.051)</option><option value="0.051">뉴플러스 미색 100g (0.051)</option></optgroup>
+<optgroup label="랑데뷰 화이트"><option value="0.074">105g (0.074)</option><option value="0.090">130g (0.090)</option><option value="0.110">160g (0.110)</option><option value="0.130">190g (0.130)</option></optgroup>
+<optgroup label="랑데뷰 네추럴"><option value="0.074">105g (0.074)</option><option value="0.090">130g (0.090)</option><option value="0.110">160g (0.110)</option><option value="0.130">190g (0.130)</option></optgroup>
+</select>
+
+<div class="lbl">판형 (인쇄 사이즈)</div>
+<select id="size">
+<optgroup label="출판·도서">
+<option value="148|210">국판 (148×210)</option>
+<option value="152|225">신국판 (152×225)</option>
+<option value="176|248">크라운판 (176×248)</option>
+<option value="188|257">46배판 (188×257)</option>
+<option value="182|257">B5 (182×257)</option>
+</optgroup>
+<optgroup label="국제규격">
+<option value="210|297">A4 (210×297)</option>
+<option value="148|210">A5 (148×210)</option>
+<option value="105|148">A6 (105×148)</option>
+</optgroup>
+</select>
+
+<div class="lbl">재단여백</div>
+<select id="bleed"><option value="2">2mm</option><option value="3" selected>3mm</option><option value="5">5mm</option></select>
+</div>
+
+<div class="panel">
+<svg viewBox="0 0 1000 780">
+<rect x="140" y="160" width="720" height="360" fill="none" stroke="#2d5bff" stroke-dasharray="8 8"/>
+<rect x="160" y="180" width="680" height="320" fill="none" stroke="#444"/>
+<rect id="back" x="160" y="180" width="300" height="320" fill="rgba(45,91,255,.05)" stroke="#2d5bff"/>
+<rect id="spineRect" x="460" y="180" width="24" height="320" fill="#2d5bff"/>
+<rect id="front" x="484" y="180" width="300" height="320" fill="rgba(45,91,255,.05)" stroke="#2d5bff"/>
+<text x="310" y="590" fill="#999" text-anchor="middle" id="backText">148mm</text>
+<text x="634" y="590" fill="#999" text-anchor="middle" id="frontText">148mm</text>
+<text x="500" y="155" fill="#2d5bff" text-anchor="middle" font-size="24" font-weight="700" id="spineText">0mm</text>
+<text x="500" y="90" fill="#666" text-anchor="middle" id="bleedText">재단여백 3mm 적용</text>
+</svg>
+<div class="metric">
+<div class="cap">SPINE WIDTH</div>
+<div class="spine" id="spineValue">0.00 mm</div>
+<div class="row" id="coverValue">재단사이즈 296 × 210 mm</div>
+<div class="row" id="workValue">작업사이즈 302 × 216 mm</div>
+</div>
+</div></div></div>
+
+<script>
+const title=document.getElementById('title');
+if(window.innerWidth>900){
+document.addEventListener('mousemove',e=>{
+title.style.transform=`translate(${(e.clientX/window.innerWidth-.5)*4}px,${(e.clientY/window.innerHeight-.5)*4}px)`;
+});
+}
+['pages','paper','size','bleed'].forEach(id=>{
+document.getElementById(id).addEventListener('input',calc);
+document.getElementById(id).addEventListener('change',calc);
+});
+function calc(){
+const p=Number(pages.value||0),t=Number(paper.value),b=Number(bleed.value);
+const [w,h]=size.value.split('|').map(Number);
+const spine=p*t,cover=w*2+spine,workW=cover+b*2,workH=h+b*2;
+spineValue.textContent=spine.toFixed(2)+' mm';
+coverValue.textContent='재단사이즈  '+cover.toFixed(2)+' × '+h+' mm';
+workValue.textContent='작업사이즈  '+workW.toFixed(2)+' × '+workH+' mm';
+spineText.textContent=spine.toFixed(2)+'mm';
+bleedText.textContent='재단여백 '+b+'mm 적용';
+backText.textContent=w+'mm'; frontText.textContent=w+'mm';
+let sw=Math.max(24,Math.min(spine*4,140));
+spineRect.setAttribute('width',sw);
+front.setAttribute('x',460+sw);
+}
+calc();
+</script>
+</body></html>
