@@ -14,7 +14,7 @@ body{font-family:Pretendard,sans-serif;background:#000;color:#fff;overflow-x:hid
 .hero{display:grid;grid-template-columns:650px minmax(500px,1fr);gap:50px;align-items:center;min-height:100vh}
 .brand{display:flex;gap:14px;align-items:center;margin-bottom:24px}
 .logo{width:50px;height:50px;border-radius:14px;background:var(--blue);display:flex;align-items:center;justify-content:center;font-weight:800}
-.title{font-size:92px;line-height:.88;font-weight:900;letter-spacing:-5px;max-width:580px;transition:transform .15s}
+.title{font-size:88px;line-height:.88;font-weight:900;letter-spacing:-5px;max-width:560px;transition:transform .15s}
 .blue{color:var(--blue)}
 .desc{color:var(--sub);line-height:1.8;margin:18px 0 26px}
 .lbl{font-size:12px;color:#7a7a7a;margin:12px 0 8px}
@@ -24,14 +24,54 @@ input,select{width:100%;height:62px;background:#090909;border:1px solid #242424;
 .metric .cap{font-size:11px;color:#666}.metric .spine{font-size:84px;font-weight:900}
 .metric .row{font-size:22px;margin-top:12px}
 svg{width:100%;height:100%}
+
 @media(max-width:900px){
-.wrap{padding:18px}
-.hero{grid-template-columns:1fr;gap:28px}
-.title{font-size:50px;max-width:none;letter-spacing:-3px}
-.panel{height:500px}
-.metric .spine{font-size:42px}
-.metric .row{font-size:16px}
+
+.wrap{
+    padding:18px;
 }
+
+.hero{
+    grid-template-columns:1fr;
+    gap:28px;
+}
+
+.title{
+    font-size:50px;
+    max-width:none;
+    letter-spacing:-3px;
+}
+
+.panel{
+    height:520px;
+}
+
+svg{
+    margin-top:0;
+    transform:scale(1.04);
+   transform-origin:top center;
+}
+
+.metric{
+    left:20px;
+    bottom:20px;
+}
+
+.metric .spine{
+    font-size:54px;
+}
+
+.metric .row{
+    font-size:16px;
+}
+
+}
+
+
+  
+
+
+  
 </style>
 </head>
 <body>
@@ -84,15 +124,15 @@ svg{width:100%;height:100%}
 
 <div class="panel">
 <svg viewBox="0 0 1000 780">
-<rect x="140" y="160" width="720" height="360" fill="none" stroke="#2d5bff" stroke-dasharray="8 8"/>
-<rect x="160" y="180" width="680" height="320" fill="none" stroke="#444"/>
-<rect id="back" x="160" y="180" width="300" height="320" fill="rgba(45,91,255,.05)" stroke="#2d5bff"/>
-<rect id="spineRect" x="460" y="180" width="24" height="320" fill="#2d5bff"/>
-<rect id="front" x="484" y="180" width="300" height="320" fill="rgba(45,91,255,.05)" stroke="#2d5bff"/>
-<text x="310" y="590" fill="#999" text-anchor="middle" id="backText">148mm</text>
-<text x="634" y="590" fill="#999" text-anchor="middle" id="frontText">148mm</text>
-<text x="500" y="155" fill="#2d5bff" text-anchor="middle" font-size="24" font-weight="700" id="spineText">0mm</text>
-<text x="500" y="90" fill="#666" text-anchor="middle" id="bleedText">재단여백 3mm 적용</text>
+<rect x="140" y="90" width="720" height="360" fill="none" stroke="#2d5bff" stroke-dasharray="8 8"/>
+<rect x="160" y="110" width="680" height="320" fill="none" stroke="#444"/>
+<rect id="back" x="160" y="110" width="300" height="320" fill="rgba(45,91,255,.05)" stroke="#2d5bff"/>
+<rect id="spineRect" x="460" y="110" width="24" height="320" fill="#2d5bff"/>
+<rect id="front" x="484" y="110" width="300" height="320" fill="rgba(45,91,255,.05)" stroke="#2d5bff"/>
+<text x="310" y="520" fill="#999" text-anchor="middle" id="backText">148mm</text>
+<text x="634" y="520" fill="#999" text-anchor="middle" id="frontText">148mm</text>
+<text x="500" y="85" fill="#2d5bff" text-anchor="middle" font-size="24" font-weight="700" id="spineText">0mm</text>
+<text x="500" y="50" fill="#666" text-anchor="middle" id="bleedText">재단여백 3mm 적용</text>
 </svg>
 <div class="metric">
 <div class="cap">SPINE WIDTH</div>
