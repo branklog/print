@@ -36,10 +36,13 @@ body{
     font-size:12px;
     letter-spacing:.5px;
     transition:.2s;
+    display:flex;
+    align-items:center;
+    gap:5px;
 }
-
 .top-links a:hover{
     color:#fff;
+    transform:translateY(-1px);
 }
 
 .logo{
@@ -136,8 +139,10 @@ svg{
     gap:10px;
 }
 
-.top-links a{
-    font-size:11px;
+.top-links a img{
+    width:18px;
+    height:18px;
+    object-fit:contain;
 }
 
 .panel{
@@ -194,10 +199,19 @@ svg{
         </div>
     </div>
 
-    <div class="top-links">
-        <a href="https://blog.naver.com/designdaum88" target="_blank">BLOG</a>
-        <a href="https://open.kakao.com/o/sAK0pH6f" target="_blank">OPEN CHAT</a>
-    </div>
+   <div class="top-links">
+
+    <a href="https://blog.naver.com/designdaum88" target="_blank">
+        <img src="blog-icon.svg">
+        BLOG
+    </a>
+
+    <a href="https://open.kakao.com/o/sAK0pH6f" target="_blank">
+        <img src="kakao-icon.svg">
+        OPEN CHAT
+    </a>
+
+</div>
 
 </div>
 <h1 class="title" id="title">BOOK<br>SPINE<br><span class="blue">CALCULATOR.</span></h1>
