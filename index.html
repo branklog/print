@@ -80,6 +80,23 @@ body{
 .blue{
     color:var(--blue);
 }
+.dot{
+    display:inline-block;
+    animation:blinkDot 1.2s infinite;
+}
+
+@keyframes blinkDot{
+
+    0%,45%,100%{
+        opacity:1;
+    }
+
+    50%,95%{
+        opacity:0;
+    }
+
+}
+    
 .desc{color:var(--sub);line-height:1.8;margin:18px 0 26px}
 .lbl{font-size:12px;color:#7a7a7a;margin:12px 0 8px}
 input,
@@ -209,6 +226,10 @@ svg{
     margin-top:10px;
 }
 
+.dot{
+    animation:none;
+}
+    
 }
   
 </style>
@@ -244,7 +265,9 @@ svg{
 </div>
 
 </div>
-<h1 class="title" id="title">BOOK<br>SPINE<br><span class="blue">CALCULATOR.</span></h1>
+<h1 class="title" id="title">BOOK<br>SPINE<br><span class="blue">
+    CALCULATOR<span class="dot">.</span>
+</span></h1>
 <p class="desc">편리한 책등 계산기. 페이지 수, 종이 재질, 판형, 재단여백 기준으로 표지 작업 사이즈도 계산합니다.</p>
 
 <div class="lbl">페이지 수</div>
