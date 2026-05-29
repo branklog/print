@@ -78,66 +78,42 @@ svg{
     display:block;
 }  
 
-
 @media(max-width:900px){
 
-    .wrap{
-        padding:18px;
-    }
-
-    .hero{
-        grid-template-columns:1fr;
-        gap:28px;
-    }
-
-    .title{
-        font-size:50px;
-        max-width:none;
-        letter-spacing:-3px;
-    }
-
-    /* 🔴 고정 높이를 없애고, 내부 요소들을 세로 정렬(Flex)로 변경합니다 */
-    .panel{
-        height: auto; /* 고정 높이 제거 */
-        display: flex;
-        flex-direction: column;
-        padding: 20px 20px 30px 20px; /* 사방 여백 확보 */
-    }
-
-   svg {
-        width: 100%;
-        height: auto;
-        display: block;
-        margin-bottom: -120px; 
-            margin-top: -20px; 
-    }
+.wrap{
+    padding:18px;
 }
 
-   
-    .metric{
-        position: relative; /* absolute에서 변경 */
-        left: 0;
-        bottom: 0;
-        width: 100%;
-    }
-
-    .metric .spine{
-        font-size:46px;
-        line-height: 1.2; /* 자간/행간이 겹치지 않도록 조정 */
-    }
-
-    .metric .row{
-        font-size:16px;
-        margin-top: 8px;
-    }
+.hero{
+    grid-template-columns:1fr;
+    gap:28px;
 }
-    
-    
 
+.title{
+    font-size:50px;
+    max-width:none;
+    letter-spacing:-3px;
+}
 
-    
+.panel{
+    height:auto;
+    padding:20px 20px 30px;
+}
 
-    
+svg{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+.metric{
+    position:relative;
+    left:auto;
+    bottom:auto;
+    width:100%;
+    margin-top:-90px;
+}
+
 .metric .spine{
     font-size:46px;
     line-height:1;
@@ -145,14 +121,10 @@ svg{
 
 .metric .row{
     font-size:16px;
+    margin-top:8px;
 }
 
 }
-
-
-  
-
-
   
 </style>
 </head>
@@ -206,7 +178,7 @@ svg{
 
 <div class="panel">
 
-<svg viewBox="0 0 1000 520" preserveAspectRatio="xMidYMin slice">
+<svg viewBox="0 0 1000 430" preserveAspectRatio="xMidYMin meet">
 <rect x="130" y="40" width="700" height="360" fill="none" stroke="#2d5bff" stroke-dasharray="8 8"/>
 <rect id="back" x="160" y="60" width="300" height="320" fill="rgba(45,91,255,.05)" stroke="#2d5bff"/>
 <rect id="spineRect" x="460" y="60" width="24" height="320" fill="#2d5bff"/>
