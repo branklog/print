@@ -22,11 +22,37 @@ input,select{width:100%;height:62px;background:#090909;border:1px solid #242424;
 .metric{position:absolute;left:38px;bottom:38px}
 .metric .cap{font-size:11px;color:#666}.metric .spine{font-size:84px;font-weight:900}
 .metric .row{font-size:22px;margin-top:12px}
-svg{
+
+    svg{
     width:100%;
     height:auto;
     display:block;
+    margin-bottom:-80px;
 }
+    
+
+.svg-top-info{
+    text-align:center;
+    padding-top:18px;
+    margin-bottom:-10px;
+}
+
+#bleedInfo{
+    font-size:12px;
+    color:#777;
+}
+
+#spineInfo{
+    font-size:32px;
+    font-weight:800;
+    color:#2d5bff;
+}
+
+
+
+
+
+    
 @media(max-width:900px){
 
 .wrap{
@@ -49,15 +75,20 @@ svg{
     padding-bottom:24px;
 }
 svg{
-    transform:scale(1.02);
+ transform:translateY(-10px) scale(1.02);
     transform-origin:top center;
 }
 
 .metric{
-    left:20px;
-    bottom:20px;
+    position:relative;
+    left:auto;
+    bottom:auto;
+    padding:0 20px 20px;
+    margin-top:-30px;
 }
 
+
+    
 .metric .spine{
     font-size:54px;
 }
@@ -124,16 +155,21 @@ svg{
 </div>
 
 <div class="panel">
-<svg viewBox="0 0 1000 620">
+
+<div class="svg-top-info">
+    <div id="bleedInfo">재단여백 3mm 적용</div>
+    <div id="spineInfo">2.42mm</div>
+</div>
+<svg viewBox="0 0 1000 500">
 <rect x="140" y="40" width="720" height="360" fill="none" stroke="#2d5bff" stroke-dasharray="8 8"/>
-<rect x="160" y="60" width="680" height="320" fill="none" stroke="#444"/>
 <rect id="back" x="160" y="60" width="300" height="320" fill="rgba(45,91,255,.05)" stroke="#2d5bff"/>
 <rect id="spineRect" x="460" y="60" width="24" height="320" fill="#2d5bff"/>
 <rect id="front" x="484" y="60" width="300" height="320" fill="rgba(45,91,255,.05)" stroke="#2d5bff"/>
 <text x="310" y="470" fill="#999" text-anchor="middle" id="backText">148mm</text>
 <text x="634" y="470" fill="#999" text-anchor="middle" id="frontText">148mm</text>
-<text x="500" y="35" fill="#2d5bff" text-anchor="middle" font-size="24" font-weight="700" id="spineText">0mm</text>
-<text x="500" y="20" fill="#666" text-anchor="middle" id="bleedText">재단여백 3mm 적용</text>    
+
+
+    
 </svg>
 <div class="metric">
 <div class="cap">SPINE WIDTH</div>
@@ -161,8 +197,8 @@ const spine=p*t,cover=w*2+spine,workW=cover+b*2,workH=h+b*2;
 spineValue.textContent=spine.toFixed(2)+' mm';
 coverValue.textContent='재단사이즈  '+cover.toFixed(2)+' × '+h+' mm';
 workValue.textContent='작업사이즈  '+workW.toFixed(2)+' × '+workH+' mm';
-spineText.textContent=spine.toFixed(2)+'mm';
-bleedText.textContent='재단여백 '+b+'mm 적용';
+spineInfo.textContent=spine.toFixed(2)+'mm';
+bleedInfo.textContent='재단여백 '+b+'mm 적용';
 backText.textContent=w+'mm'; frontText.textContent=w+'mm';
 let sw=Math.max(24,Math.min(spine*4,140));
 spineRect.setAttribute('width',sw);
