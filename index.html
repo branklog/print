@@ -84,15 +84,12 @@ body{
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 
-    text-shadow:
-        0 0 24px rgba(45,91,255,.12);
+
 
     position:relative;
 }
 .blue{
-    color:#4c73ff;
-    text-shadow:
-        0 0 18px rgba(45,91,255,.45);
+    color:var(--blue);
 }
 .desc{color:var(--sub);line-height:1.8;margin:18px 0 26px}
 .lbl{font-size:12px;color:#7a7a7a;margin:12px 0 8px}
@@ -342,9 +339,27 @@ svg{
 <script>
 const title=document.getElementById('title');
 if(window.innerWidth>900){
+
+let mouseX=0;
+let mouseY=0;
+
 document.addEventListener('mousemove',e=>{
-title.style.transform=`translate(${(e.clientX/window.innerWidth-.5)*4}px,${(e.clientY/window.innerHeight-.5)*4}px)`;
+    mouseX=(e.clientX/window.innerWidth-.5)*4;
+    mouseY=(e.clientY/window.innerHeight-.5)*4;
 });
+
+function animateTitle(){
+
+    const floatY=Math.sin(Date.now()*0.0015)*2;
+
+    title.style.transform=
+    `translate(${mouseX}px,${mouseY + floatY}px)`;
+
+    requestAnimationFrame(animateTitle);
+}
+
+animateTitle();
+
 }
 ['pages','paper','size','bleed'].forEach(id=>{
 document.getElementById(id).addEventListener('input',calc);
