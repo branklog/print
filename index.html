@@ -87,18 +87,22 @@ svg{
 
 .hero{
     grid-template-columns:1fr;
-    gap:28px;
+    gap:24px;
+    min-height:auto;
 }
 
 .title{
-    font-size:50px;
-    max-width:none;
+    font-size:52px;
+    line-height:.9;
     letter-spacing:-3px;
 }
 
 .panel{
     height:auto;
-    padding:20px 20px 30px;
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 svg{
@@ -108,21 +112,24 @@ svg{
 }
 
 .metric{
-    position:relative;
-    left:auto;
-    bottom:auto;
+    position:static;
     width:100%;
-    margin-top:-90px;
+    margin-top:10px;
+}
+
+.metric .cap{
+    font-size:11px;
 }
 
 .metric .spine{
-    font-size:46px;
+    font-size:44px;
     line-height:1;
+    margin-top:6px;
 }
 
 .metric .row{
     font-size:16px;
-    margin-top:8px;
+    margin-top:10px;
 }
 
 }
