@@ -74,31 +74,7 @@ body{
     max-width:560px;
     transition:transform .15s;
     position:relative;
-z-index:2;
-}
-.title::before{
-    content:'';
-    position:absolute;
-
-    top:-24px;
-    left:-24px;
-
-    width:78%;
-    height:112%;
-
-    border:1px solid rgba(45,91,255,.22);
-
-    border-radius:26px;
-
-    z-index:-1;
-
-    transition:transform .18s ease;
-transform:
-translate(
-    var(--tx,0),
-    var(--ty,0)
-);
-    
+    z-index:2;
 }
     
 .blue{
@@ -185,30 +161,6 @@ svg{
     z-index:2;
 }
 
-.title::before{
-    content:'';
-    position:absolute;
-
-    top:-24px;
-    left:-24px;
-
-    width:78%;
-    height:112%;
-
-    border:1px solid rgba(45,91,255,.22);
-
-    border-radius:26px;
-
-    z-index:-1;
-
-    transition:transform .18s ease;
-
-    transform:
-    translate(
-        var(--tx,0),
-        var(--ty,0)
-    );
-}
 
 
     
@@ -367,33 +319,8 @@ svg{
 </div></div></div>
 
 <script>
-const title=document.getElementById('title');
-if(window.innerWidth>900){
 
-const titleBox =
-window.getComputedStyle(title,'::before');
-
-document.addEventListener('mousemove',e=>{
-
-    const x=(e.clientX/window.innerWidth-.5)*3;
-    const y=(e.clientY/window.innerHeight-.5)*3;
-
-    title.style.setProperty(
-        '--tx',
-        `${x}px`
-    );
-
-    title.style.setProperty(
-        '--ty',
-        `${y}px`
-    );
-
-});
-
-}
-
-
-    
+   
 ['pages','paper','size','bleed'].forEach(id=>{
 document.getElementById(id).addEventListener('input',calc);
 document.getElementById(id).addEventListener('change',calc);
